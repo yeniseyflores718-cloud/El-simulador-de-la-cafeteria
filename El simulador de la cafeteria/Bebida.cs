@@ -8,9 +8,9 @@ namespace El_simulador_de_la_cafeteria
 {
     internal class bebida
     {
-        private string nombre;
-        private string tamano;
-        private float precio;
+        protected string nombre;
+        protected string tamano;
+        protected float precio;
         private float descuento;
         public float Descuento
         {
@@ -34,7 +34,7 @@ namespace El_simulador_de_la_cafeteria
             this.tamano = tamano;
             this.precio = precio;
         }
-        public string preparar()
+        public virtual string preparar()
         {
             return "preparando un: "+ nombre+ " tamaño: "+ tamano;
         }
