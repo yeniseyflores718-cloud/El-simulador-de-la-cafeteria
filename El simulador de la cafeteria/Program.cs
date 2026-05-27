@@ -13,7 +13,6 @@
             pedido.Add(new BebidaCaliente("Moka", "Mediano", 79.0f, 90));
 
             float total = 0;
-
             // Recorrido con FOR
             Console.WriteLine("****Ticket***:\n");
             for (int i = 0; i < pedido.Count; i++)
