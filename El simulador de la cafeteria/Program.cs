@@ -12,27 +12,29 @@
             pedido.Add(new BebidaFria("Limonada", "Chico", 45.00f, 5));
             pedido.Add(new BebidaCaliente("Moka", "Mediano", 79.0f, 90));
 
-            Console.WriteLine("**** TICKET ****\n");
-
             float total = 0;
-            foreach (bebida bebida in pedido)
-            {
-                Console.WriteLine(bebida.preparar());
 
-                // Pattern Matching
-                if (bebida is BebidaCaliente caliente)
+            // Recorrido con FOR
+            Console.WriteLine("****Ticket***:\n");
+            for (int i = 0; i < pedido.Count; i++)
+            {
+                Console.WriteLine(pedido[i].preparar());
+                if (pedido[i] is BebidaCaliente caliente)
                 {
                     if (caliente.temperatura > 88)
                     {
-                        Console.WriteLine("[!] ADVERTENCIA: ¡Cuidado, bebida muy caliente!");
+                        Console.WriteLine("***!ADVERTENCIA!*** ¡Cuidado, bebida muy caliente!");
                     }
                 }
 
-                total += bebida.Precio;
+                total += pedido[i].Precio;
 
-                Console.WriteLine("-----------------------------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------");
             }
-            Console.WriteLine("\nTOTAL A PAGAR: $" + total);        
+
+            Console.WriteLine("\nTOTAL: $" + total);
+
+            Console.ReadKey();
         }
     }
         
