@@ -9,24 +9,23 @@ namespace El_simulador_de_la_cafeteria
 {
     internal class BebidaCaliente : bebida
     {
-        private int Temperatura;
+        private float Temperatura;
 
-        public int temperatura
+        public float temperatura
         {
             get { return Temperatura; }
             set { Temperatura = value; }
         }
-
-        //constructor en cuando heredamos 
+        //constructor 
         public BebidaCaliente(string nombre, string tamano, float precio, int _temperatura) : base(nombre, tamano, precio)
         {
             Temperatura = _temperatura;
         }
-
-        //metodo sobreescrito(Polimorfismo)
+        //polimorfismo
         public override string preparar()
         {
-            return "Preparando un : " + nombre + " Caliente  de tamaño : " + tamano + " a una temperatura de : " + Temperatura + "°C";
+            return "Estamos preparando un : " + Nombre + " Caliente (Temperatura: " + Temperatura +
+                   "°C) tamaño : " + Tamaño;
         }
     }
 }

@@ -16,16 +16,16 @@ namespace El_simulador_de_la_cafeteria
             get { return CantidadHielo; }
             set { CantidadHielo = value; }
         }
-
         public BebidaFria(string _nombre, string _tamaño, float _precio, int _cantidadHielo) : base(_nombre, _tamaño, _precio)
         {
             CantidadHielo = _cantidadHielo;
         }
-
-        //metodo sobreescrito(Polimorfismo)
+        //polimorfismo
         public override string preparar()
         {
-            return "Preparando un : " + nombre + " Fria  de tamaño : " + tamano;
+            return "Estamos preparando un : " + Nombre + " Helado (Con " + CantidadHielo +
+                   " cubos de hielo) tamaño : " + Tamaño;
         }
     }
 }
+

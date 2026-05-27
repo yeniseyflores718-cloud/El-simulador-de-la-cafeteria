@@ -3,65 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace El_simulador_de_la_cafeteria
 {
     internal class bebida
     {
         protected string nombre;
-        protected string tamano;
+        protected string tamaño;
         protected float precio;
         private float descuento;
-        public float Descuento
+        //propiedades
+        public string  Nombre
         {
-            get { return descuento; }
-            set
-            {
-                if (value >= 0 && value <= 100)
-                {
-                    descuento = value;
-                }
-                else
-                {
-                    descuento = -1;
-                }
-            }
+            get { return nombre; }
+            set { nombre = value; }
         }
-        //constructor
+
+        public string Tamaño
+        {
+            get { return tamaño; }
+            set { tamaño = value; }
+        }
+
+        public float Precio
+        {
+            get { return precio; }
+            set { precio = value; }
+        }
+        //constructor parametrizado
         public bebida(string nombre, string tamano, float precio)
         {
             this.nombre = nombre;
-            this.tamano = tamano;
+            this.tamaño = tamano;
             this.precio = precio;
         }
+        // contructor vacio
+        public bebida()
+        {
+            Nombre = "";
+            Tamaño = "";
+            Precio = 0.0F;
+        }
+        //metodos 
         public virtual string preparar()
         {
-            return "preparando un: "+ nombre+ " tamaño: "+ tamano;
+            return "Preparando un : " + Nombre + " de tamaño : " + Tamaño;
         }
-        // Método para aplicar descuento
-        public void AplicarDescuento(float porcentaje)
+
+        public void Descuento(float descuento)
         {
-            // Usar la propiedad para validar
-            Descuento = porcentaje;
-
-            if (Descuento != -1)
-            {
-                float descuentoAplicado = precio * (Descuento / 100);
-                precio = precio - descuentoAplicado;
-
-                Console.WriteLine("Descuento aplicado correctamente.");
-            }
-            else
-            {
-                Console.WriteLine("Error: el descuento debe estar entre 0 y 100.");
-            }
+            Precio = Precio * (1 - (descuento / 100));
         }
-        // Método para mostrar descripción
         public string MostrarDescripcion()
         {
-            return "Esto es un " + nombre +
-                              " de tamaño " + tamano +
-                              " con un costo de $" + precio;
+            return "Esto es un " + nombre + " de tamaño " + tamaño + " con un costo de $" + precio;
         }
+
     }
 }
