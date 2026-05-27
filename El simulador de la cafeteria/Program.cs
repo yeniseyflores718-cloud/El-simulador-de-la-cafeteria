@@ -6,11 +6,11 @@
         {
             // Lista de bebidas
             List<bebida> pedido = new List<bebida>();
-            pedido.Add(new BebidaCaliente("Café Americano", "Grande", 90.5f, 89));
-            pedido.Add(new BebidaFria("Frappé de Capuchino", "Mediano", 60.00f, 7));
-            pedido.Add(new BebidaCaliente("Chocolate Caliente", "Grande", 55.00f, 80));
-            pedido.Add(new BebidaFria("Té Helado", "Chico", 85.00f, 5));
-            pedido.Add(new BebidaCaliente("Latte", "Mediano", 89.0f, 90));
+            pedido.Add(new BebidaCaliente("Café", "Grande", 97.5f, 89));
+            pedido.Add(new BebidaFria("cold briew", "chico", 35.00f, 7));
+            pedido.Add(new BebidaCaliente("Espresso", "Grande", 70.00f, 80));
+            pedido.Add(new BebidaFria("Limonada", "Chico", 45.00f, 5));
+            pedido.Add(new BebidaCaliente("Moka", "Mediano", 79.0f, 90));
 
             Console.WriteLine("**** TICKET ****\n");
 
